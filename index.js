@@ -1,12 +1,15 @@
 const express = require("express");
 const morgan = require("morgan");
 const { createProxyMiddleware } = require("http-proxy-middleware");
+const cors = require("cors");
 
 const app = express();
 
 const PORT = 3002;
 const HOST = "localhost";
 const API_SERVICE_URL = "https://jsonplaceholder.typicode.com";
+
+app.use(cors());
 
 app.use(morgan("dev"));
 
