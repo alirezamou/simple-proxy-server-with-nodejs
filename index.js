@@ -14,6 +14,7 @@ const API_SERVICE_JSONPLACEHOLDER = "https://jsonplaceholder.typicode.com";
 const API_SERVICE_PIXABAY = "https://pixabay.com/api";
 const API_SERVICE_UNSPLASH = "https://source.unsplash.com/random";
 const API_SERVICE_TVMAZE = "https://api.tvmaze.com";
+const API_SERVICE_TVMAZE_STATIC = "https://static.tvmaze.com";
 
 app.use(cors());
 
@@ -64,11 +65,22 @@ app.use(
     changeOrigin: true,
     agent,
     pathRewrite: {
-		[`^/tvmaze`]: "",
-	}
+      [`^/tvmaze`]: "",
+    },
   })
 );
 
+app.use(
+  "/tvmaze_statics",
+  createProxyMiddleware({
+    target: API_SERVICE_TVMAZE_STATIC,
+    changeOrigin: true,
+    agent,
+    pathRewrite: {
+      [`^/tvmaze_statics`]: "",
+    },
+  })
+);
 
 app.listen(PORT, HOST, () => {
   console.log(`Starting Proxy at ${HOST}:${PORT}`);
