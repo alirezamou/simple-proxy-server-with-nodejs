@@ -1,0 +1,17 @@
+{
+    "/json_placeholder": {
+        "api_url": "https://jsonplaceholder.typicode.com"
+    },
+    "/unsplash": {
+        "api_url": "https://source.unsplash.com"
+    },
+    "/pixabay": {
+        "api_url": "https://pixabay.com/api"
+    },
+    "/tvmaze": {
+        "api_url": "https://api.tvmaze.com"
+    },
+    "/tvmaze_statics": {
+        "api_url": "https://static.tvmaze.com"
+    }
+}
